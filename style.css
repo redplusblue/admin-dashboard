@@ -87,10 +87,10 @@ body {
 }
 
 #top-nav {
-    background-color: aliceblue;
+    background-color: white;
     display: grid;
     grid-template-rows: 1fr 1.2fr;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
 }
 
 #top-nav > div {
@@ -107,7 +107,14 @@ body {
     display: flex;
 }
 
+#search {
+    display: flex;
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
 #search-bar {
+    background: rgba(0, 0, 0, 0.055) !important;
     width: 25vw;
     font-size: 1.25rem;
     height: 1.25rem;
@@ -205,15 +212,15 @@ body {
 }
 
 #feed {
+    background: aliceblue;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    border: solid 2px red;
+    grid-template-rows: 3fr 2fr;
 }
 
-#feed > div {
-    background-color: aliceblue;
+/* #feed > div {
     border: 2px solid salmon;
-}
+} */
 
 #projects {
     grid-row-start: 1;
@@ -226,23 +233,27 @@ body {
     display: grid;
     grid: 1fr 1fr 1fr/ 1fr 1fr;
     gap: 0.45rem;
-    border: 2px solid black;
 }
 
 #project-item {
     --border: #f1a763;
     margin: 0.45rem;
-    border-left: var(--border) solid 10px; 
-    border-right: var(--border) solid 10px;
+    border-left: var(--border) solid 6px; 
+    border-right: var(--border) solid 6px;
     border-top: var(--border) solid 2px;
     border-bottom: var(--border) solid 2px;
     border-radius: 20%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
 }
 
 #project-item > span {
     margin: 15px;
+}
+
+#project-item:hover {
+    border-color: var(--bgcolor);
 }
 
 #project-title {
@@ -252,6 +263,10 @@ body {
 #project-details {
     margin-top: -15px !important;
     flex-grow: 1;
+}
+
+#project-details:hover {
+    font-size: 110%;
 }
 
 #interact {
@@ -267,9 +282,62 @@ body {
 }
 
 #interact > img:hover {
+    transform: translateY(-2px);
     background: var(--bgcolor);
     cursor: pointer;
 }
 
+#announcements, #trending {
+    border: 2px solid #f1a763;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: auto;
+    border-radius: 5%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#announcements > span, #trending > span {
+    margin-top: 12px;
+    margin-left: 2px;
+}
 
 
+#announcements > div, #announcements> span {
+    flex: 1;
+    text-align: center;
+}
+
+#announcement-title, #trending-title {
+    align-self: flex-start;
+    font-size: 1.4rem;
+}
+
+#announcement-content, #trending-content {
+   border-bottom: dotted 1px black;
+}
+
+#announcements:hover {
+    border-color: var(--bgcolor);
+}
+
+#trending > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+}
+
+#trending > span {
+    font-size: 1.5rem;
+}
+
+#announcements > div:hover, #trending>div:hover {
+    background: rgba(0, 0, 0, 0.201);
+    cursor: pointer;
+}
+
+#trending:hover {
+    border-color: var(--bgcolor);
+}
